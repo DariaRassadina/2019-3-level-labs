@@ -1,4 +1,8 @@
+from typing import TextIO
+
 import requests
+
+import sys
 
 import json
 
@@ -15,10 +19,9 @@ def publish_report(path, articles):
     titles = {}  # should be a list of dictionaries instead
     for i in range(len(articles)):
         titles['title' + str(i + 1)] = articles[i]
-
     j_file = {'url': path, 'creationDate': datetime.datetime.now().strftime("%Y-%m-%d"), 'articles': titles}
 
-    json_data = json.dumps(j_file)
+    json_data = json.dumps(j_file, ensure_ascii=False)
 
     with open("articles.json", "w") as file:
         file.write(json_data)
