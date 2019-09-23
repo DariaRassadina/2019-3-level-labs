@@ -16,10 +16,7 @@ server = Flask(__name__)
 
 
 def publish_report(path, articles):
-    titles = {}  # should be a list of dictionaries instead
-    for i in range(len(articles)):
-        titles['title' + str(i + 1)] = articles[i]
-    j_file = {'url': path, 'creationDate': datetime.datetime.now().strftime("%Y-%m-%d"), 'articles': titles}
+    j_file = {'url': path, 'creationDate': datetime.datetime.now().strftime("%Y-%m-%d"), 'articles': articles}
 
     json_data = json.dumps(j_file, ensure_ascii=False)
 
@@ -32,8 +29,7 @@ def find_articles(html_page):
     head_content = parsed_page.find_all('h3')
     parsed_content = []
     for parsed in head_content:
-        titles = parsed.get_text()
-        parsed_content.append(titles)
+        parsed_content.append({'title': parsed.get_text()})
     return parsed_content
 
 
