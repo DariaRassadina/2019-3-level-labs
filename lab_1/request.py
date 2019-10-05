@@ -7,11 +7,6 @@ import datetime
 from bs4 import BeautifulSoup
 
 
-def read_json(path):
-    with open(path, "r") as read_file:
-        return json.loads(read_file)
-
-
 def publish_report(path, articles):
     dictionary_for_json = {'url': 'https://www.bbc.com/russian/topics/0f469e6a-d4a6-46f2-b727-2bd039cb6b53',
                            'creationDate': datetime.datetime.now().strftime("%Y-%m-%d"),
@@ -31,4 +26,5 @@ def find_articles(html_page):
 
 
 def get_html_page(url):
-    return url
+    html_page = open(url).read()
+    return html_page
