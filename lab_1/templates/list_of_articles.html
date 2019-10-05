@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lab_1</title>
+</head>
+<body>
+    <p>url:<a href=""> {{url}}</a></p>
+    <p>creationDate: {{creationDate}}</p>
+    <p>articles:</p>
+    {% for article in articles %}
+    <p>title: {{article.title}}</p>
+    {% endfor %}
+</body>
+</html>
