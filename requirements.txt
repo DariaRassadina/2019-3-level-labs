@@ -1,1 +1,4 @@
-﻿bs4requests
+bs4
+requests
+json
+flask
