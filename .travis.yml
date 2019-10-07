@@ -5,4 +5,4 @@ python:
 install:
   - pip install -r requirements.txt
 # command to run tests
-script: python lab_1/test_find_articles.py, python lab_1/test_publish_records.py
+script: python lab_1/test_find_articles.py, python lab_1/test_publish_report.py
