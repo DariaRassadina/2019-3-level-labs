@@ -6,5 +6,4 @@ install:
   - pip install -r requirements.txt
 # command to run tests
 script:
-  - python test_publish_report.py
-  - python test_find_articles.py
+  - python -m unittest discover
