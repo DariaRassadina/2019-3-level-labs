@@ -26,5 +26,5 @@ def find_articles(html_page):
 
 
 def get_html_page(url):
-    html_page = open(url).read()
-    return html_page
+    bbc_science_request = requests.get(url)
+    return bbc_science_request
