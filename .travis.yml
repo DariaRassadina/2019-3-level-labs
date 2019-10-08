@@ -6,4 +6,3 @@ install:
   - pip install -r requirements.txt
 # command to run tests
 script: python lab_1/test_find_articles.py
-script: python lab_1/test_get_html.py
