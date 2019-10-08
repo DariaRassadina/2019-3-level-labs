@@ -18,7 +18,7 @@ def publish_report(path, articles):
 
 def find_articles(html_page):
     parsed_page = BeautifulSoup(html_page)
-    head_content = parsed_page.find_all('h3')
+    head_content = parsed_page.find_all('h3', {"class": "title-link__title"})
     parsed_titles = []
     for parsed in head_content:
         parsed_titles.append({'title': parsed.get_text()})
