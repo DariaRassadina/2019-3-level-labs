@@ -8,7 +8,7 @@ class MyTestCase(unittest.TestCase):
     def test_publish_report(self):
         url = 'Наука - BBC News Русская служба.html'
         articles = find_articles(open(url).read())
-        path = publish_report('/Users/articles.json', articles)
+        path = publish_report('articles.json', articles)
         check_url = False
         check_title = False
         with open(path, 'r') as f:
