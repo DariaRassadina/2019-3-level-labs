@@ -9,7 +9,12 @@
     <p>creationDate: {{data.creationDate}}</p>
     <p>articles:</p>
     {% for article in data.articles%}
-    <p>title: {{article.title}}</p>
+    <ol>
+        <p>title: {{article.title}}</p>
+    </ol>
     {% endfor %}
+<form method="post" action="/refresh">
+    <button type="submit">Обновить</button>
+</form>
 </body>
 </html>
