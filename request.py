@@ -21,7 +21,8 @@ def find_articles(html_page):
     head_content = parsed_page.find_all('h3', {"class": "title-link__title"})
     parsed_titles = []
     for parsed in head_content:
-        parsed_titles.append({'title': parsed.get_text()})
+        dic = {'title': parsed.get_text(), 'time': datetime.datetime.now().strftime("%H:%M:%S")}
+        parsed_titles.append(dic)
     return parsed_titles
 
 

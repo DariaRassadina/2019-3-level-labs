@@ -8,11 +8,11 @@
     <p>url:<a href=""> {{data.url}}</a></p>
     <p>creationDate: {{data.creationDate}}</p>
     <p>articles:</p>
-    {% for article in data.articles%}
     <ol>
-        <p>title: {{article.title}}</p>
-    </ol>
+    {% for article in data.articles%}
+        <li>{{article.title}} ({{article.time}})</li>
     {% endfor %}
+    </ol>
 <form method="post" action="/refresh">
     <button type="submit">Обновить</button>
 </form>
