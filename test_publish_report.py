@@ -11,11 +11,10 @@ class MyTestCase(unittest.TestCase):
         path = publish_report('articles.json', articles)
         with open(path, 'r') as f:
             data = json.loads(f.read())
-            self.aassertIsNotNone(data['url'])
+            self.assertTrue(len(data['url']) > 1)
             for i in data['articles']:
                 for k in i:
                     self.assertIsNotNone(i[k])
-
 
 
 if __name__ == '__main__':
