@@ -9,18 +9,13 @@ class MyTestCase(unittest.TestCase):
         url = 'Наука - BBC News Русская служба.html'
         articles = find_articles(open(url).read())
         path = publish_report('articles.json', articles)
-        check_url = False
-        check_title = False
         with open(path, 'r') as f:
             data = json.loads(f.read())
-            if data['url'] != '0':
-                check_url = True
+            self.aassertIsNotNone(data['url'])
             for i in data['articles']:
-                if i['title'] != '0':
-                    check_title = True
+                for k in i:
+                    self.assertIsNotNone(i[k])
 
-        self.assertEqual(check_url, True)
-        self.assertEqual(check_title, True)
 
 
 if __name__ == '__main__':
